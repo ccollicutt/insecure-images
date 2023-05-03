@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: many-cves-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: many-cves
+  template:
+    metadata:
+      labels:
+        app: many-cves
+    spec:
+      containers:
+      - name: many-cves-container
+        image: ghcr.io/ccollicutt/many-cves:latest
