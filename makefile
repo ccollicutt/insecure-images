@@ -3,7 +3,7 @@ build-image:
 
 run-image-docker:
 	docker rm --force many-cves || true
-	docker run -d --name many-cves --rm many-cves 
+	docker run -d --name many-cves -p 5000:5000 --rm many-cves
 	docker logs --follow many-cves
 
 stop-image:
